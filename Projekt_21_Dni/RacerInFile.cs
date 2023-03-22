@@ -10,7 +10,6 @@ namespace Projekt_21_Dni
 {
     public class RacerInFile : RacerBase
     {
-        public const string filename = "F1_Statystyka.txt";
         public RacerInFile(int id, string name, string surname, int age) : base(id, name, surname, age)
         {
             this.Id = id;
@@ -25,9 +24,9 @@ namespace Projekt_21_Dni
 
         public override void AddPoints(int pkt)
         {
-            using (var writer = File.AppendText(filename))
+            using (var writer = File.AppendText("F1_" + Id + "_" + Surname + ".txt"))
             {
-                writer.WriteLine(Id +" "+ pkt);
+                writer.WriteLine(pkt);
             }
         }
         public override void AddPoints(string pkt)
@@ -84,76 +83,25 @@ namespace Projekt_21_Dni
         }
         public override Statistics GetStatistics()
         {
-            List<Statistics> stat = new List<Statistics>();
-            var stat1 = new Statistics();
-            var stat2 = new Statistics();
-            var stat3 = new Statistics();
-            var stat4 = new Statistics();
-            var stat5 = new Statistics();
-            var stat6 = new Statistics();
-            var stat7 = new Statistics();
-            var stat8 = new Statistics();
-            var stat9 = new Statistics();
-            var stat10 = new Statistics();
-            var stat11 = new Statistics();
+            var stat = new Statistics();
             int nr = 1;
-            using (var reader = File.OpenText(filename))
+            using (var reader = File.OpenText("F1_" + Id + "_" + Surname + ".txt"))
             {
                 var line = reader.ReadLine();
-                if (File.Exists(filename))
+                if (File.Exists("F1_" + Id + "_" + Surname + ".txt"))
                 {
                     while (line != null)
                     {
-                        string[] odczyt = line.Split(" ");
-                        var idRacer = int.Parse(odczyt[0]);
-                        var pktRacer = int.Parse(odczyt[1]);
-                        switch (idRacer)
-                        {
-                            case 1:
-                                stat1.AddPoints(pktRacer);
-                                break;
-                            case 2:
-                                stat2.AddPoints(pktRacer);
-                                break;
-                            case 3:
-                                stat3.AddPoints(pktRacer);
-                                break;
-                            case 4:
-                                stat4.AddPoints(pktRacer);
-                                break;
-                            case 5:
-                                stat5.AddPoints(pktRacer);
-                                break;
-                            case 6:
-                                stat6.AddPoints(pktRacer);
-                                break;
-                            case 7:;
-                                stat7.AddPoints(pktRacer);
-                                break;
-                            case 8:;
-                                stat8.AddPoints(pktRacer);
-                                break;
-                            case 9:
-                                stat9.AddPoints(pktRacer);
-                                break;
-                            case 10:
-                                stat10.AddPoints(pktRacer);
-                                break;
-                            case 11:
-                                stat11.AddPoints(pktRacer);
-                                break;
-                            default:
-                                break;
-                        }
-
+                        var pkt  = int.Parse(line);
+                        stat.AddPoints(pkt);
                         line = reader.ReadLine();
                         nr++;
                     }
 
                 }
-                return stat;
 
             }
+            return stat;
         }
     }
 }
