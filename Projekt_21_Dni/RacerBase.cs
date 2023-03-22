@@ -20,6 +20,7 @@ namespace Projekt_21_Dni
         public string Surname { get; private set; }
         public int Age { get; private set; }
         public abstract void AddPoints(int pkt);
+        public abstract void AddPoints(string pkt);
         public abstract Statistics GetStatistics();
     }
 }

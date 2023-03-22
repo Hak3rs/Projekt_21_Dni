@@ -9,6 +9,8 @@ namespace Projekt_21_Dni
     public interface IRacer
     {
         Statistics GetStatistics();
+        void AddPoints(int pkt);
+        void AddPoints(string pkt);
         string Name { get; }
         string Surname { get; }
         int Age { get; }

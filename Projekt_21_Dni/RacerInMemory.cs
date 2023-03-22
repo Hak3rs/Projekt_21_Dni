@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
@@ -79,6 +80,18 @@ namespace Projekt_21_Dni
             }
             return stat;
 
+        }
+
+        public override void AddPoints(string pkt)
+        {
+            if (Int32.TryParse(pkt, out int point))
+            {
+                this.AddPoints(point);
+            }
+            else
+            {
+                throw new Exception("Value is not INT");
+            }
         }
     }
 }
