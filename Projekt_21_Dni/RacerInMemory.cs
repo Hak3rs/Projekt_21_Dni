@@ -84,7 +84,7 @@ namespace Projekt_21_Dni
 
         public override void AddPoints(string pkt)
         {
-            if (Int32.TryParse(pkt, out int point))
+            if (int.TryParse(pkt, out int point))
             {
                 this.AddPoints(point);
             }

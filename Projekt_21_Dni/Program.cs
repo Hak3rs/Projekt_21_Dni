@@ -12,19 +12,19 @@ Console.WriteLine("==================================================");
 Console.WriteLine("\tFormula 1 Statystyki Zawodnikow\t");
 Console.WriteLine("==================================================");
 
-List<RacerInFile> racers = new List<RacerInFile>();
+List<RacerInMemory> racers = new List<RacerInMemory>();
 
-racers.Add(new RacerInFile(1,"Max","Verstappen",25));
-racers.Add(new RacerInFile(2,"Charles", "Leclerc", 25));
-racers.Add(new RacerInFile(3,"Fernando", "Alonso", 41));
-racers.Add(new RacerInFile(4,"Carlos", "Sainz", 28));
-racers.Add(new RacerInFile(5,"Lewis", "Hamilton", 38));
-racers.Add(new RacerInFile(6,"Robert", "Kubica", 38));
-racers.Add(new RacerInFile(7,"Oscar", "Piastri", 21));
-racers.Add(new RacerInFile(8,"Lando", "Norris", 23));
-racers.Add(new RacerInFile(9,"Michael", "Schumacher", 54));
-racers.Add(new RacerInFile(10, "Sebastian", "Vettel", 35));
-racers.Add(new RacerInFile(11, "George", "Russell", 25));
+racers.Add(new RacerInMemory(1,"Max","Verstappen",25));
+racers.Add(new RacerInMemory(2,"Charles", "Leclerc", 25));
+racers.Add(new RacerInMemory(3,"Fernando", "Alonso", 41));
+racers.Add(new RacerInMemory(4,"Carlos", "Sainz", 28));
+racers.Add(new RacerInMemory(5,"Lewis", "Hamilton", 38));
+racers.Add(new RacerInMemory(6,"Robert", "Kubica", 38));
+racers.Add(new RacerInMemory(7,"Oscar", "Piastri", 21));
+racers.Add(new RacerInMemory(8,"Lando", "Norris", 23));
+racers.Add(new RacerInMemory(9,"Michael", "Schumacher", 54));
+racers.Add(new RacerInMemory(10, "Sebastian", "Vettel", 35));
+racers.Add(new RacerInMemory(11, "George", "Russell", 25));
 
 
 Console.WriteLine("==================================================");
