@@ -22,7 +22,7 @@ namespace RacerTests
             racer1.AddPoints(20);
             racer1.AddPoints("15");
             var stat1 = racer1.GetStatistics();
-            Assert.AreEqual(60, stat1.Suma);
+            Assert.AreEqual(60, stat1.Sum);
         }
         [Test]
         public void WhenGivePointsShouldShowAverage()
@@ -32,7 +32,7 @@ namespace RacerTests
             racer1.AddPoints(10);
             racer1.AddPoints("8");
             var stat1 = racer1.GetStatistics();
-            Assert.AreEqual(11, stat1.Srednia);
+            Assert.AreEqual(11, stat1.Average);
         }
         [Test]
         public void WhenGivePointsShouldShowMinMax()

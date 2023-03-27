@@ -12,22 +12,22 @@ namespace Projekt_21_Dni
         {
             this.Min = int.MaxValue;
             this.Max = int.MinValue;
-            this.Suma = 0;
-            this.Zlicz = 0;
+            this.Sum = 0;
+            this.Count = 0;
         }
        
         #region Dane
         public int Min { get; private set; }
         public int Max { get; private set; }
-        public int Srednia 
+        public int Average
         { 
             get 
             {
-                return this.Suma / this.Zlicz;
+                return this.Sum / this.Count;
             }
         }
-        public int Suma { get; private set; }
-        public int Zlicz { get; private set; }
+        public int Sum { get; private set; }
+        public int Count { get; private set; }
 
         #endregion Dane
 
@@ -35,8 +35,8 @@ namespace Projekt_21_Dni
 
         public void AddPoints(int pkt)
         {
-            this.Zlicz++;
-            this.Suma += pkt;
+            this.Count++;
+            this.Sum += pkt;
             this.Min = Math.Min(pkt, this.Min);
             this.Max = Math.Max(pkt, this.Max);
         }

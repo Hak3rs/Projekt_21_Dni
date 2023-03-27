@@ -1,30 +1,29 @@
 ﻿using Projekt_21_Dni;
 using System.Linq;
 
-
 int nr = 1;
-int najlepszy = 0;
-string imie = "";
-string nazwisko = "";
+int best = 0;
+string name = "";
+string surname = "";
 string[] truck = { "Grand Prix Australii", "Grand Prix Maroka", "Grand Prix Wielkiej Brytanii", "Grand Prix Australii", "Grand Prix Europy" };
 
 Console.WriteLine("==================================================");
 Console.WriteLine("\tFormula 1 Statystyki Zawodnikow\t");
 Console.WriteLine("==================================================");
 
-List<RacerInMemory> racers = new List<RacerInMemory>();
+List<RacerInFile> racers = new List<RacerInFile>();
 
-racers.Add(new RacerInMemory(1,"Max","Verstappen",25));
-racers.Add(new RacerInMemory(2,"Charles", "Leclerc", 25));
-racers.Add(new RacerInMemory(3,"Fernando", "Alonso", 41));
-racers.Add(new RacerInMemory(4,"Carlos", "Sainz", 28));
-racers.Add(new RacerInMemory(5,"Lewis", "Hamilton", 38));
-racers.Add(new RacerInMemory(6,"Robert", "Kubica", 38));
-racers.Add(new RacerInMemory(7,"Oscar", "Piastri", 21));
-racers.Add(new RacerInMemory(8,"Lando", "Norris", 23));
-racers.Add(new RacerInMemory(9,"Michael", "Schumacher", 54));
-racers.Add(new RacerInMemory(10, "Sebastian", "Vettel", 35));
-racers.Add(new RacerInMemory(11, "George", "Russell", 25));
+racers.Add(new RacerInFile(1,"Max","Verstappen",25));
+racers.Add(new RacerInFile(2,"Charles", "Leclerc", 25));
+racers.Add(new RacerInFile(3,"Fernando", "Alonso", 41));
+racers.Add(new RacerInFile(4,"Carlos", "Sainz", 28));
+racers.Add(new RacerInFile(5,"Lewis", "Hamilton", 38));
+racers.Add(new RacerInFile(6,"Robert", "Kubica", 38));
+racers.Add(new RacerInFile(7,"Oscar", "Piastri", 21));
+racers.Add(new RacerInFile(8,"Lando", "Norris", 23));
+racers.Add(new RacerInFile(9,"Michael", "Schumacher", 54));
+racers.Add(new RacerInFile(10, "Sebastian", "Vettel", 35));
+racers.Add(new RacerInFile(11, "George", "Russell", 25));
 
 
 Console.WriteLine("==================================================");
@@ -43,7 +42,7 @@ foreach (var item in truck)
     Console.WriteLine($"\t{item}\t");
     Console.WriteLine("==================================================");
 
-    for (int nr_str = 1; nr_str <= 11; nr_str++)
+    for (int nr_place = 1; nr_place <= 11; nr_place++)
     {
         List<int>random = new List<int>();
         while (random.Count != 11)
@@ -56,15 +55,16 @@ foreach (var item in truck)
             else
             {
                 random.Add(id);
-                Console.WriteLine($"{nr_str} miejsce: " + racers[id].Name + " " + racers[id].Surname);
-                racers[id].Miejsce(nr_str);
-                nr_str++;
+                Console.WriteLine($"{nr_place} miejsce: " + racers[id].Name + " " + racers[id].Surname);
+                racers[id].Place(nr_place);
+                nr_place++;
 
             }
 
         }
     }
 }
+
 Console.WriteLine("==================================================");
 Console.WriteLine($"\tStatystyki Zawodnkow F1\t");
 Console.WriteLine("==================================================");
@@ -72,17 +72,18 @@ Console.WriteLine("==================================================");
 foreach (var racer in racers)
 {
     var stat = racer.GetStatistics();
-    Console.WriteLine(racer.Id + ". " + racer.Name + " " + racer.Surname + " \t" + stat.Min + "\t" + stat.Max + "\t" + stat.Suma + "\t" + stat.Srednia);
+    Console.WriteLine(racer.Id + ". " + racer.Name + " " + racer.Surname + " \t" + stat.Min + "\t" + stat.Max + "\t" + stat.Sum + "\t" + stat.Average);
     Console.WriteLine("----------------------------------------------");
-    if (stat.Suma > najlepszy)
+    if (stat.Sum > best)
     {
-        imie = racer.Name;
-        nazwisko = racer.Surname;
-        najlepszy = stat.Suma;
+        name = racer.Name;
+        surname = racer.Surname;
+        best = stat.Sum;
     }
 }
+
 Console.WriteLine("==================================================");
-Console.WriteLine($"\tZwyciesca: {imie}\t{nazwisko}");
+Console.WriteLine($"\tZwyciesca: {name}\t{surname}");
 Console.WriteLine("==================================================");
 
 
