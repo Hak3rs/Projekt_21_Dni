@@ -19,22 +19,27 @@ namespace Projekt_21_Dni
             this.Age = age;
         }
 
-        private List<int> Points = new List<int>();
+        private List<int> points = new List<int>();
+
         public int Id { get; private set; }
+
         public string Name { get; private set; }
+
         public string Surname { get; private set; }
+
         public int Age { get; private set; }
+
 
         public override void AddPoints(int pkt)
         {
-            this.Points.Add(pkt);
+            this.points.Add(pkt);
         }
 
 
         public override Statistics GetStatistics()
         {
             var stat = new Statistics();
-            foreach (var pkt in Points)
+            foreach (var pkt in points)
             {
                 stat.AddPoints(pkt);
             }

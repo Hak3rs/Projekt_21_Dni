@@ -35,7 +35,9 @@ foreach (var racer in racers)
     nr++;
 }
 Console.WriteLine("==================================================");
+
 Random rand = new Random();
+
 foreach (var item in truck)
 {
     Console.WriteLine("==================================================");
@@ -45,6 +47,7 @@ foreach (var item in truck)
     for (int nr_place = 1; nr_place <= 11; nr_place++)
     {
         List<int>random = new List<int>();
+        
         while (random.Count != 11)
         {
             int id = rand.Next(0, 11);
@@ -74,6 +77,7 @@ foreach (var racer in racers)
     var stat = racer.GetStatistics();
     Console.WriteLine(racer.Id + ". " + racer.Name + " " + racer.Surname + " \t" + stat.Min + "\t" + stat.Max + "\t" + stat.Sum + "\t" + stat.Average);
     Console.WriteLine("----------------------------------------------");
+    
     if (stat.Sum > best)
     {
         name = racer.Name;

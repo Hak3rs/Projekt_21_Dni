@@ -16,10 +16,15 @@ namespace Projekt_21_Dni
             this.Age = age;
         }
         public int Id { get; private set; }
+
         public string Name { get; private set; }
+
         public string Surname { get; private set; }
+
         public int Age { get; private set; }
+
         public abstract void AddPoints(int pkt);
+
         public void AddPoints(string pkt)
         {
             if (int.TryParse(pkt, out int point))

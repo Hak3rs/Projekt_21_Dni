@@ -17,10 +17,15 @@ namespace Projekt_21_Dni
             this.Surname = surname;
             this.Age = age;
         }
+
         public int Id { get; private set; }
+
         public string Name { get; private set; }
+
         public string Surname { get; private set; }
+
         public int Age { get; private set; }
+
 
         public override void AddPoints(int pkt)
         {
@@ -29,10 +34,12 @@ namespace Projekt_21_Dni
                 writer.WriteLine(pkt);
             }
         }
+
         public override Statistics GetStatistics()
         {
             var stat = new Statistics();
             int nr = 1;
+
             using (var reader = File.OpenText("F1_" + Id + "_" + Surname + ".txt"))
             {
                 var line = reader.ReadLine();

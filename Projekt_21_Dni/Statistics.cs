@@ -18,7 +18,9 @@ namespace Projekt_21_Dni
        
         #region Dane
         public int Min { get; private set; }
+
         public int Max { get; private set; }
+
         public int Average
         { 
             get 
@@ -27,6 +29,7 @@ namespace Projekt_21_Dni
             }
         }
         public int Sum { get; private set; }
+
         public int Count { get; private set; }
 
         #endregion Dane
