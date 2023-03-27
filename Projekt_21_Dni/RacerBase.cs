@@ -33,7 +33,7 @@ namespace Projekt_21_Dni
         }
 
 
-        public void Place(int place)
+        public void AddPlace(int place)
         {
             switch (place)
             {

@@ -56,7 +56,7 @@ foreach (var item in truck)
             {
                 random.Add(id);
                 Console.WriteLine($"{nr_place} miejsce: " + racers[id].Name + " " + racers[id].Surname);
-                racers[id].Place(nr_place);
+                racers[id].AddPlace(nr_place);
                 nr_place++;
 
             }
